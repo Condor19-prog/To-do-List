@@ -13,7 +13,7 @@ export type TaskType = {
 }
 
 export type FilterValuesType = 'all' | 'active' | 'completed'
-type TodoListType = {
+export type TodoListType = {
     id: string
     title: string
     filter: FilterValuesType
@@ -78,7 +78,7 @@ function App() {
 
     function removeTask(taskID: string, todoListID: string) {
         let todoList = tasks[todoListID]
-        tasks[todoListID] = todoList.filter(t => t.id != taskID)
+        tasks[todoListID] = todoList.filter(t => t.id !== taskID)
         setTasks({...tasks})
     }
 
